@@ -1,12 +1,21 @@
-"use client"
-
+import type {Metadata} from 'next'
 import HeroCarousel from "@/components/sections/HeroCarousel"
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description:
+    'RiseNext bridges the knowledge gap for forcibly displaced students in Rwanda to access higher education. Winners of the 2024 CIEE UNHCR Student Challenge.',
+  openGraph: {
+    title: 'RiseNext — Empowering Displaced Students Through Education',
+    description:
+      'RiseNext bridges the knowledge gap for forcibly displaced students in Rwanda to access higher education. Winners of the 2024 CIEE UNHCR Student Challenge.',
+    images: [{url: '/Workshop-1.JPG', width: 1200, height: 630}],
+  },
+}
 
 export default function HomePage() {
   return (
     <>
-
-
       <HeroCarousel />
 
       {/* Video Start */}
@@ -15,17 +24,11 @@ export default function HomePage() {
           <div className="row g-0">
             <div className="col-lg-11">
               <div className="h-100 py-5 d-flex align-items-center">
-                <button
-                  type="button"
-                  className="btn-play rounded"
-                  data-bs-toggle="modal"
-                  data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                  data-bs-target="#videoModal"
-                >
-                  <span></span>
-                </button>
+                <div className="flex-shrink-0">
+                  <i className="fa fa-graduation-cap fa-3x text-secondary"></i>
+                </div>
                 <h3 className="ms-5 mb-0">
-                  Together, we can build a world where everyone has the chance to thrive.
+                  Together, we can build a world where every displaced student has the chance to thrive.
                 </h3>
               </div>
             </div>
@@ -85,8 +88,8 @@ export default function HomePage() {
               <div className="about-img">
                 <img
                   className="img-fluid w-100 rounded"
-                  src="/charitize-img/about.jpg"
-                  alt="Image"
+                  src="/Workshop-17.JPG"
+                  alt="RiseNext workshop session"
                 />
               </div>
             </div>
@@ -95,41 +98,40 @@ export default function HomePage() {
                 About Us
               </p>
               <h1 className="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">
-                Join Hands, Change the World
+                Bridging the Gap to Higher Education
               </h1>
               <p className="mb-4 wow fadeIn" data-wow-delay="0.3s">
-                Every hand extended in kindness brings us closer to a world free from suffering. Be
-                part of a global movement dedicated to building a future where equality and
-                compassion thrive.
+                RiseNext is a mentoring program that bridges the knowledge gap for forcibly displaced
+                high school and university students to access higher education opportunities. We
+                connect refugee and displaced students in Rwanda with mentors who guide them through
+                every stage — from university applications to career readiness.
               </p>
               <div className="row g-4 pt-2">
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                   <div className="h-100">
                     <h3>Our Mission</h3>
                     <p>
-                      Our mission is to uplift underprivileged communities by providing resources,
-                      education, and tools for growth.
+                      To equip forcibly displaced students with the knowledge, mentorship, and
+                      resources needed to access and thrive in higher education.
                     </p>
                     <p className="text-dark">
-                      <i className="fa fa-check text-primary me-2"></i>No one should go to bed
-                      hungry.
+                      <i className="fa fa-check text-primary me-2"></i>University application support
                     </p>
                     <p className="text-dark">
-                      <i className="fa fa-check text-primary me-2"></i>We spread kindness and
-                      support.
+                      <i className="fa fa-check text-primary me-2"></i>Financial aid navigation
                     </p>
                     <p className="text-dark mb-0">
-                      <i className="fa fa-check text-primary me-2"></i>We can change someone's life.
+                      <i className="fa fa-check text-primary me-2"></i>Career readiness coaching
                     </p>
                   </div>
                 </div>
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                   <div className="h-100 bg-primary p-4 text-center rounded">
                     <p className="fs-5 text-dark">
-                      Through your donations, we spread kindness and support to children and
-                      families.
+                      Winners of the 2024 CIEE UNHCR Student Challenge — backed by a $50,000 grant
+                      to launch our pilot program in Rwanda.
                     </p>
-                    <a className="btn btn-secondary rounded py-2 px-4" href="">
+                    <a className="btn btn-secondary rounded py-2 px-4" href="/donate">
                       Donate Now
                     </a>
                   </div>
@@ -151,37 +153,29 @@ export default function HomePage() {
                   <div className="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                     <div className="text-center bg-primary py-5 px-4 h-100">
                       <i className="fa fa-users fa-3x text-secondary mb-3"></i>
-                      <h1 className="display-5 mb-0" data-toggle="counter-up">
-                        500
-                      </h1>
-                      <span className="text-dark">Team Members</span>
+                      <h1 className="display-5 mb-0">4%</h1>
+                      <span className="text-dark">Displaced students reach university today</span>
                     </div>
                   </div>
                   <div className="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                     <div className="text-center bg-secondary py-5 px-4 h-100">
                       <i className="fa fa-award fa-3x text-primary mb-3"></i>
-                      <h1 className="display-5 text-white mb-0" data-toggle="counter-up">
-                        70
-                      </h1>
-                      <span className="text-white">Award Winning</span>
+                      <h1 className="display-5 text-white mb-0">15%</h1>
+                      <span className="text-white">UNHCR's 2030 enrollment target</span>
                     </div>
                   </div>
                   <div className="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                     <div className="text-center bg-secondary py-5 px-4 h-100">
-                      <i className="fa fa-list-check fa-3x text-primary mb-3"></i>
-                      <h1 className="display-5 text-white mb-0" data-toggle="counter-up">
-                        3000
-                      </h1>
-                      <span className="text-white">Total Projects</span>
+                      <i className="fa fa-graduation-cap fa-3x text-primary mb-3"></i>
+                      <h1 className="display-5 text-white mb-0">$50K</h1>
+                      <span className="text-white">CIEE grant awarded to RiseNext</span>
                     </div>
                   </div>
                   <div className="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                     <div className="text-center bg-primary py-5 px-4 h-100">
-                      <i className="fa fa-comments fa-3x text-secondary mb-3"></i>
-                      <h1 className="display-5 mb-0" data-toggle="counter-up">
-                        7000
-                      </h1>
-                      <span className="text-dark">Client's Review</span>
+                      <i className="fa fa-globe fa-3x text-secondary mb-3"></i>
+                      <h1 className="display-5 mb-0">38</h1>
+                      <span className="text-dark">Countries in the global challenge</span>
                     </div>
                   </div>
                 </div>
@@ -190,25 +184,28 @@ export default function HomePage() {
             <div className="col-lg-6">
               <p className="section-title bg-white text-start text-primary pe-3 fw-bold">Why Us!</p>
               <h1 className="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">
-                Few Reasons Why People Choosing Us!
+                A Program Built by Students, for Students
               </h1>
               <p className="mb-4 wow fadeIn" data-wow-delay="0.3s">
-                We believe in creating opportunities and empowering communities through education,
-                healthcare, and sustainable development. Your support helps us bring smiles, hope,
-                and a brighter future to those in need.
+                Founded by four Kigali-based university students who experienced the barriers
+                firsthand, RiseNext offers a multi-stage mentoring model tailored to the unique
+                challenges faced by refugee and forcibly displaced students in Rwanda.
               </p>
               <p className="text-dark wow fadeIn" data-wow-delay="0.4s">
-                <i className="fa fa-check text-primary me-2"></i>Justo magna erat amet
+                <i className="fa fa-check text-primary me-2"></i>Pre-admission: computer literacy,
+                prerequisites &amp; applications
               </p>
               <p className="text-dark wow fadeIn" data-wow-delay="0.5s">
-                <i className="fa fa-check text-primary me-2"></i>Aliqu diam amet diam et eos
+                <i className="fa fa-check text-primary me-2"></i>Early university: financial aid,
+                academic &amp; social support
               </p>
               <p className="text-dark wow fadeIn" data-wow-delay="0.6s">
-                <i className="fa fa-check text-primary me-2"></i>Clita erat ipsum et lorem et sit
+                <i className="fa fa-check text-primary me-2"></i>Pre-graduation: career coaching
+                &amp; professional networking
               </p>
               <div className="d-flex mt-4 wow fadeIn" data-wow-delay="0.7s">
-                <a className="btn btn-secondary rounded py-3 px-4" href="">
-                  Join Us Now
+                <a className="btn btn-secondary rounded py-3 px-4" href="/opportunities">
+                  Get Involved
                 </a>
               </div>
             </div>
@@ -223,9 +220,9 @@ export default function HomePage() {
           <div className="row g-5">
             <div className="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
               <div className="testimonial-title">
-                <h1 className="display-6 mb-4">What People Say About Our Activities.</h1>
+                <h1 className="display-6 mb-4">What People Say About RiseNext.</h1>
                 <p className="fs-5 mb-0">
-                  We work to bring smiles, hope, and a brighter future to those in need.
+                  Hear from the students and mentors whose lives RiseNext has touched.
                 </p>
               </div>
             </div>
@@ -237,7 +234,7 @@ export default function HomePage() {
                       <div className="testimonial-img">
                         <img
                           className="img-fluid rounded"
-                          src="/charitize-img/testimonial-1.jpg"
+                          src="/Workshop-19.JPG"
                           alt=""
                         />
                       </div>
@@ -245,17 +242,17 @@ export default function HomePage() {
                     <div className="col-md-6">
                       <div className="testimonial-text pb-5 pb-md-0">
                         <p className="fs-5">
-                          Education is the foundation of change. By funding schools, scholarships,
-                          and training programs, we can help children and adults unlock their
-                          potential for a better future.
+                          RiseNext gave me not just guidance, but hope. I went from not knowing how
+                          to apply to university to receiving my admission letter — all with the
+                          support of my mentor.
                         </p>
                         <div className="d-flex align-items-center">
                           <div className="btn-lg-square bg-primary rounded text-white flex-shrink-0">
                             <i className="fa fa-quote-right fa-2x"></i>
                           </div>
                           <div className="ps-3">
-                            <h5 className="mb-0">Alexander Bell</h5>
-                            <span>CEO, Founder</span>
+                            <h5 className="mb-0">RiseNext Mentee</h5>
+                            <span>Refugee Student, Kigali</span>
                           </div>
                         </div>
                       </div>
@@ -268,7 +265,7 @@ export default function HomePage() {
                       <div className="testimonial-img">
                         <img
                           className="img-fluid rounded"
-                          src="/charitize-img/testimonial-2.jpg"
+                          src="/Workshop-20.JPG"
                           alt=""
                         />
                       </div>
@@ -276,17 +273,17 @@ export default function HomePage() {
                     <div className="col-md-6">
                       <div className="testimonial-text pb-5 pb-md-0">
                         <p className="fs-5">
-                          Every hand extended in kindness brings us closer to a world free from
-                          suffering. Be part of a global movement dedicated to building a future
-                          where equality and compassion thrive.
+                          Mentoring through RiseNext has been one of the most rewarding experiences
+                          of my life. Seeing displaced students unlock their potential and secure
+                          university placements is incredibly fulfilling.
                         </p>
                         <div className="d-flex align-items-center">
                           <div className="btn-lg-square bg-primary rounded text-white flex-shrink-0">
                             <i className="fa fa-quote-right fa-2x"></i>
                           </div>
                           <div className="ps-3">
-                            <h5 className="mb-0">Donald Pakura</h5>
-                            <span>CEO, Founder</span>
+                            <h5 className="mb-0">RiseNext Mentor</h5>
+                            <span>University Student, Rwanda</span>
                           </div>
                         </div>
                       </div>
@@ -299,7 +296,7 @@ export default function HomePage() {
                       <div className="testimonial-img">
                         <img
                           className="img-fluid rounded"
-                          src="/charitize-img/testimonial-3.jpg"
+                          src="/Workshop-22.JPG"
                           alt=""
                         />
                       </div>
@@ -307,17 +304,17 @@ export default function HomePage() {
                     <div className="col-md-6">
                       <div className="testimonial-text pb-5 pb-md-0">
                         <p className="fs-5">
-                          Love and compassion have the power to heal. Through your donations and
-                          volunteer work, we can spread kindness and support to children, families,
-                          and communities struggling to find stability.
+                          This program is exactly what displaced students in Rwanda need. The
+                          mentors understand our challenges and provide practical, actionable
+                          guidance every step of the way.
                         </p>
                         <div className="d-flex align-items-center">
                           <div className="btn-lg-square bg-primary rounded text-white flex-shrink-0">
                             <i className="fa fa-quote-right fa-2x"></i>
                           </div>
                           <div className="ps-3">
-                            <h5 className="mb-0">Boris Johnson</h5>
-                            <span>CEO, Founder</span>
+                            <h5 className="mb-0">RiseNext Mentee</h5>
+                            <span>University Student, Rwanda</span>
                           </div>
                         </div>
                       </div>

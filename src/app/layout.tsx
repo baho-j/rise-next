@@ -1,79 +1,67 @@
 import type {Metadata} from 'next'
 import Script from 'next/script'
 import {GoogleAnalytics} from '@/lib/analytics'
-import {sanityFetch} from '@/lib/sanity/client'
-import {siteSettingsQuery} from '@/lib/sanity/queries'
-import {revalidationTimes, tags} from '@/lib/sanity/config'
 
-interface SiteSettings {
-  title: string
-  description: string
-  keywords?: string[]
-  ogImage?: string
-  favicon?: string
-  googleAnalyticsId?: string
-}
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rise-next.org'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const siteSettings = await sanityFetch<SiteSettings>({
-    query: siteSettingsQuery,
-    tags: [tags.siteSettings],
-    revalidate: revalidationTimes.siteSettings,
-  })
-
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rise-next.org'
-
-  return {
-    title: {
-      default: siteSettings?.title || 'RiseNext - Empowering Refugees Through Education',
-      template: `%s | ${siteSettings?.title || 'RiseNext'}`,
-    },
+export const metadata: Metadata = {
+  title: {
+    default: 'RiseNext — Empowering Displaced Students Through Education',
+    template: '%s | RiseNext',
+  },
+  description:
+    'RiseNext is a mentoring program bridging the knowledge gap for forcibly displaced high school and university students to access higher education opportunities in Rwanda and beyond.',
+  keywords: [
+    'RiseNext',
+    'refugee education',
+    'displaced students',
+    'mentoring',
+    'Rwanda',
+    'higher education',
+    'UNHCR',
+    'CIEE',
+  ],
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'RiseNext',
+    title: 'RiseNext — Empowering Displaced Students Through Education',
     description:
-      siteSettings?.description ||
-      'RiseNext is a mentoring program bridging the knowledge gap for forcibly displaced students to access higher education.',
-    keywords: siteSettings?.keywords || [],
-    openGraph: {
-      type: 'website',
-      locale: 'en_US',
-      url: siteUrl,
-      siteName: siteSettings?.title || 'RiseNext',
-      images: siteSettings?.ogImage
-        ? [
-            {
-              url: siteSettings.ogImage,
-              width: 1200,
-              height: 630,
-              alt: siteSettings?.title || 'RiseNext',
-            },
-          ]
-        : [],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: '@risenext',
-      creator: '@risenext',
-    },
-    icons: {
-      icon: siteSettings?.favicon || '/favicon.ico',
-    },
-  }
+      'RiseNext is a mentoring program bridging the knowledge gap for forcibly displaced high school and university students to access higher education opportunities in Rwanda and beyond.',
+    images: [
+      {
+        url: '/Workshop-1.JPG',
+        width: 1200,
+        height: 630,
+        alt: 'RiseNext — Empowering Displaced Students',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@risenext',
+    creator: '@risenext',
+    title: 'RiseNext — Empowering Displaced Students Through Education',
+    description:
+      'RiseNext is a mentoring program bridging the knowledge gap for forcibly displaced high school and university students to access higher education opportunities.',
+    images: ['/Workshop-1.JPG'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const siteSettings = await sanityFetch<SiteSettings>({
-    query: siteSettingsQuery,
-    tags: [tags.siteSettings],
-    revalidate: revalidationTimes.siteSettings,
-  })
-
-  const gaId = siteSettings?.googleAnalyticsId || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 
   return (
-    <html lang="en">
+    <html lang="en"  suppressHydrationWarning>
       <head>
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,19 +80,19 @@ export default async function RootLayout({
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
           rel="stylesheet"
         />
-        {/* Charitize Libraries Stylesheet */}
+        {/* Libraries Stylesheet */}
         <link href="/lib/animate/animate.min.css" rel="stylesheet" />
         <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-        {/* Charitize Bootstrap Stylesheet */}
+        {/* Bootstrap Stylesheet */}
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
-        {/* Charitize Template Stylesheet */}
+        {/* Template Stylesheet */}
         <link href="/css/style.css" rel="stylesheet" />
       </head>
       <body>
         {gaId && <GoogleAnalytics gaId={gaId} />}
         {children}
 
-        {/* JavaScript Libraries - Load in sequence */}
+        {/* JavaScript Libraries */}
         <Script src="https://code.jquery.com/jquery-3.4.1.min.js" strategy="beforeInteractive" />
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"

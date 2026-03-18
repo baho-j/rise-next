@@ -1,4 +1,16 @@
-'use client'
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about RiseNext — founded by Team Eagles, winners of the 2024 CIEE UNHCR Student Challenge. Meet our founders and discover our mission to empower displaced students in Rwanda.',
+  openGraph: {
+    title: 'About RiseNext — Team Eagles',
+    description:
+      'Founded by four Kigali-based university students, RiseNext is a mentoring program empowering forcibly displaced students to access higher education.',
+    images: [{url: '/Workshop-16.JPG', width: 1200, height: 630}],
+  },
+}
 
 export default function AboutPage() {
   return (
@@ -11,7 +23,7 @@ export default function AboutPage() {
               <div className="about-img">
                 <img
                   className="img-fluid rounded w-100"
-                  src="/charitize-img/about.jpg"
+                  src="/Workshop-16.JPG"
                   alt="About RiseNext"
                 />
               </div>
@@ -76,8 +88,8 @@ export default function AboutPage() {
           >
             <h1 className="display-6 mb-4">Meet Our Mentee Cohorts</h1>
           </div>
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+          <div className="row g-4 justify-content-center">
+            <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
               <div className="bg-white rounded h-100 p-5">
                 <div className="d-flex align-items-center mb-4">
                   <div className="btn-lg-square bg-secondary rounded text-white flex-shrink-0">
@@ -85,16 +97,16 @@ export default function AboutPage() {
                   </div>
                   <div className="ps-3">
                     <h4 className="mb-0">Cohort 1</h4>
-                    <span className="text-muted">September 2024</span>
+                    <span className="text-muted">Pilot Cohort</span>
                   </div>
                 </div>
                 <p className="mb-4">
-                  Our inaugural cohort of 45 mentees from refugee camps across East Africa, focused
-                  on college application guidance and scholarship opportunities.
+                  Our inaugural cohort of 4 mentees — displaced students in Rwanda guided through
+                  university applications, academic prerequisites, and financial aid navigation.
                 </p>
                 <div className="d-flex justify-content-between mb-2">
                   <span className="text-dark">
-                    <i className="fa fa-users text-secondary me-2"></i>45 Mentees
+                    <i className="fa fa-users text-secondary me-2"></i>4 Mentees
                   </span>
                 </div>
                 <div className="progress rounded mb-3" style={{height: '5px'}}>
@@ -107,7 +119,7 @@ export default function AboutPage() {
                 <span className="badge bg-success rounded">Completed</span>
               </div>
             </div>
-            <div className="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+            <div className="col-md-6 wow fadeIn" data-wow-delay="0.3s">
               <div className="bg-white rounded h-100 p-5">
                 <div className="d-flex align-items-center mb-4">
                   <div className="btn-lg-square bg-secondary rounded text-white flex-shrink-0">
@@ -115,56 +127,27 @@ export default function AboutPage() {
                   </div>
                   <div className="ps-3">
                     <h4 className="mb-0">Cohort 2</h4>
-                    <span className="text-muted">January 2025</span>
+                    <span className="text-muted">Current Cohort</span>
                   </div>
                 </div>
                 <p className="mb-4">
-                  Our second cohort expanded to 60 mentees with a focus on university transition
-                  support and career development pathways.
+                  Our second cohort of 10 mentees is currently ongoing — building on lessons from
+                  Cohort 1 with expanded mentorship, university transition support, and career
+                  readiness coaching.
                 </p>
                 <div className="d-flex justify-content-between mb-2">
                   <span className="text-dark">
-                    <i className="fa fa-users text-secondary me-2"></i>60 Mentees
+                    <i className="fa fa-users text-secondary me-2"></i>10 Mentees
                   </span>
                 </div>
                 <div className="progress rounded mb-3" style={{height: '5px'}}>
                   <div
                     className="progress-bar bg-primary rounded-end"
                     role="progressbar"
-                    style={{width: '75%'}}
+                    style={{width: '70%'}}
                   ></div>
                 </div>
                 <span className="badge bg-primary text-dark rounded">Active</span>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-              <div className="bg-white rounded h-100 p-5">
-                <div className="d-flex align-items-center mb-4">
-                  <div className="btn-lg-square bg-secondary rounded text-white flex-shrink-0">
-                    <i className="fa fa-graduation-cap fa-2x"></i>
-                  </div>
-                  <div className="ps-3">
-                    <h4 className="mb-0">Cohort 3</h4>
-                    <span className="text-muted">May 2025</span>
-                  </div>
-                </div>
-                <p className="mb-4">
-                  Our upcoming cohort will support 75 mentees with enhanced programming including
-                  skills training and internship connections.
-                </p>
-                <div className="d-flex justify-content-between mb-2">
-                  <span className="text-dark">
-                    <i className="fa fa-users text-secondary me-2"></i>75 Mentees
-                  </span>
-                </div>
-                <div className="progress mb-3 rounded" style={{height: '5px'}}>
-                  <div
-                    className="progress-bar bg-secondary rounded-end"
-                    role="progressbar"
-                    style={{width: '25%'}}
-                  ></div>
-                </div>
-                <span className="badge bg-dark text-primary rounded">Upcoming</span>
               </div>
             </div>
           </div>
@@ -178,17 +161,11 @@ export default function AboutPage() {
           <div className="row g-0">
             <div className="col-lg-11">
               <div className="h-100 py-5 d-flex align-items-center">
-                <button
-                  type="button"
-                  className="btn-play"
-                  data-bs-toggle="modal"
-                  data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                  data-bs-target="#videoModal"
-                >
-                  <span></span>
-                </button>
+                <div className="flex-shrink-0">
+                  <i className="fa fa-graduation-cap fa-3x text-secondary"></i>
+                </div>
                 <h3 className="ms-5 mb-0">
-                  Together, we can build a world where everyone has the chance to thrive.
+                  Together, we can build a world where every displaced student has the chance to thrive.
                 </h3>
               </div>
             </div>
@@ -257,16 +234,16 @@ export default function AboutPage() {
                 <div className="team-detail pe-4">
                   <img
                     className="img-fluid rounded mb-4"
-                    src="/charitize-img/team-1.jpg"
+                    src="/amina.jpeg"
                     alt="Amina Mkova"
                   />
                   <h3>Amina Mkova</h3>
-                  <span>Co-Founder</span>
+                  <span>Co-Founder &amp; Team Captain</span>
                 </div>
                 <div className="team-social bg-secondary rounded d-flex flex-column justify-content-center flex-shrink-0 p-4">
                   <a
                     className="btn btn-square btn-primary rounded my-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/in/amina-mkova/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -280,7 +257,7 @@ export default function AboutPage() {
                 <div className="team-detail pe-4">
                   <img
                     className="img-fluid rounded mb-4"
-                    src="/charitize-img/team-2.jpg"
+                    src="/obed.jpg"
                     alt="Obed Korusenge"
                   />
                   <h3>Obed Korusenge</h3>
@@ -289,7 +266,7 @@ export default function AboutPage() {
                 <div className="team-social bg-secondary rounded d-flex flex-column justify-content-center flex-shrink-0 p-4">
                   <a
                     className="btn btn-square btn-primary rounded my-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/in/obed-nsanzimfura/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -303,7 +280,7 @@ export default function AboutPage() {
                 <div className="team-detail pe-4">
                   <img
                     className="img-fluid rounded mb-4"
-                    src="/charitize-img/team-3.jpg"
+                    src="/joselyto.webp"
                     alt="Joselyto Charite"
                   />
                   <h3>Joselyto Charite</h3>
@@ -312,7 +289,7 @@ export default function AboutPage() {
                 <div className="team-social bg-secondary rounded d-flex flex-column justify-content-center flex-shrink-0 p-4">
                   <a
                     className="btn btn-square btn-primary rounded my-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/in/baho-charite/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -326,7 +303,7 @@ export default function AboutPage() {
                 <div className="team-detail pe-4">
                   <img
                     className="img-fluid rounded mb-4"
-                    src="/charitize-img/team-1.jpg"
+                    src="/nimco.jpeg"
                     alt="Nimco Ibrahim"
                   />
                   <h3>Nimco Ibrahim</h3>
@@ -335,7 +312,7 @@ export default function AboutPage() {
                 <div className="team-social bg-secondary rounded d-flex flex-column justify-content-center flex-shrink-0 p-4">
                   <a
                     className="btn btn-square btn-primary rounded my-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/in/nimco-ibrahim-515596205/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

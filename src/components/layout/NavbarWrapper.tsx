@@ -1,32 +1,21 @@
-import {sanityFetch} from '@/lib/sanity/client'
-import {siteSettingsQuery} from '@/lib/sanity/queries'
-import {revalidationTimes, tags} from '@/lib/sanity/config'
 import Navbar from './Navbar'
 
-interface SiteSettings {
-  title: string
-  logo?: string
-  contactEmail?: string
-  contactPhone?: string
-  location?: {
-    addressLine1?: string
-    addressLine2?: string
-    city?: string
-    country?: string
-  }
-  socialLinks?: {
-    facebook?: string
-    linkedin?: string
-    instagram?: string
-  }
+const siteSettings = {
+  title: 'RiseNext',
+  logo: '/logo.png',
+  contactEmail: 'info@rise-next.org',
+  contactPhone: '+250 780 066 261',
+  location: {
+    city: 'Kigali',
+    country: 'Rwanda',
+  },
+  socialLinks: {
+    facebook: 'https://www.facebook.com/505870975939339/',
+    linkedin: 'https://www.linkedin.com/company/nextrise-mentorship',
+    instagram: 'https://www.instagram.com/risenext_/',
+  },
 }
 
-export default async function NavbarWrapper() {
-  const siteSettings = await sanityFetch<SiteSettings>({
-    query: siteSettingsQuery,
-    tags: [tags.siteSettings],
-    revalidate: revalidationTimes.siteSettings,
-  })
-
+export default function NavbarWrapper() {
   return <Navbar siteSettings={siteSettings} />
 }

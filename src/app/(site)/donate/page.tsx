@@ -1,4 +1,17 @@
-"use client"
+
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Donate',
+  description:
+    'Support RiseNext and help displaced students in Rwanda access higher education. Donate locally via MoMo Pay or bank transfer, or internationally via Equity Bank.',
+  openGraph: {
+    title: 'Donate to RiseNext',
+    description:
+      'Your donation helps displaced students in Rwanda access higher education through mentorship and support.',
+    images: [{url: '/Workshop-1.JPG', width: 1200, height: 630}],
+  },
+}
 
 export default function DonatePage() {
   return (
@@ -66,121 +79,58 @@ export default function DonatePage() {
               </div>
             </div>
             <div className="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
-              <div className="bg-secondary rounded-start rounded-end p-5">
-                <h4 className="mb-4 fw-bold text-primary">Choose Your Donation Amount</h4>
-                <form>
-                  <div className="row g-3">
-                    <div className="col-12">
-                      <div className="btn-group w-100 rounded" role="group">
-                        <input
-                          type="radio"
-                          className="btn-check"
-                          name="amount"
-                          id="amount25"
-                          value="25"
-                        />
-                        <label className="btn btn-outline-primary rounded-start" htmlFor="amount25">
-                          $25
-                        </label>
+              {/* Local Donations */}
+              <div className="bg-secondary rounded p-5 mb-4">
+                <h4 className="mb-1 fw-bold text-primary">Local Donations</h4>
+                <p className="text-white mb-4">For donors based in Rwanda</p>
 
-                        <input
-                          type="radio"
-                          className="btn-check"
-                          name="amount"
-                          id="amount50"
-                          value="50"
-                        />
-                        <label className="btn btn-outline-primary" htmlFor="amount50">
-                          $50
-                        </label>
-
-                        <input
-                          type="radio"
-                          className="btn-check"
-                          name="amount"
-                          id="amount100"
-                          value="100"
-                        />
-                        <label className="btn btn-outline-primary" htmlFor="amount100">
-                          $100
-                        </label>
-
-                        <input
-                          type="radio"
-                          className="btn-check"
-                          name="amount"
-                          id="amount250"
-                          value="250"
-                        />
-                        <label className="btn btn-outline-primary rounded-end" htmlFor="amount250">
-                          $250
-                        </label>
-                      </div>
+                {/* MoMo Pay */}
+                <div className="bg-white rounded p-4 mb-3">
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="flex-shrink-0 btn-lg-square bg-primary rounded">
+                      <i className="fa fa-mobile-alt text-dark"></i>
                     </div>
-                    <div className="col-12">
-                      <div className="form-floating">
-                        <input
-                          type="number"
-                          className="form-control rounded"
-                          id="customAmount"
-                          placeholder="Custom Amount"
-                        />
-                        <label htmlFor="customAmount">Custom Amount ($)</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="form-check">
-                        <input className="form-check-input " type="checkbox" id="monthlyDonation" />
-                        <label className="form-check-label text-white" htmlFor="monthlyDonation">
-                          Make this a monthly donation
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          className="form-control rounded"
-                          id="firstName"
-                          placeholder="First Name"
-                        />
-                        <label htmlFor="firstName">First Name</label>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-floating">
-                        <input
-                          type="text"
-                          className="form-control rounded"
-                          id="lastName"
-                          placeholder="Last Name"
-                        />
-                        <label htmlFor="lastName">Last Name</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="form-floating">
-                        <input
-                          type="email"
-                          className="form-control rounded"
-                          id="email"
-                          placeholder="Email"
-                        />
-                        <label htmlFor="email">Email Address</label>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <button className="btn btn-primary rounded py-3 px-5 w-100" type="submit">
-                        Donate Now
-                      </button>
-                    </div>
-                    <div className="col-12 text-center">
-                      <small className="text-primary">
-                        Your donation is secure and tax-deductible
-                      </small>
-                    </div>
+                    <h5 className="ms-3 mb-0">Mobile Money (MoMo Pay)</h5>
                   </div>
-                </form>
+                  <p className="mb-1"><strong>Account Name:</strong> RISENEXT Ltd</p>
+                  <p className="mb-1"><strong>MoMo Pay Code:</strong> 080066</p>
+                  <p className="mb-1"><strong>Number:</strong> +250 780 066 261</p>
+                  <p className="mb-0 text-muted small">Send via MTN Mobile Money using the code or number above. Add "Donation" in the payment note.</p>
+                </div>
+
+                {/* Local Bank Transfer */}
+                <div className="bg-white rounded p-4">
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="flex-shrink-0 btn-lg-square bg-primary rounded">
+                      <i className="fa fa-university text-dark"></i>
+                    </div>
+                    <h5 className="ms-3 mb-0">Bank Transfer</h5>
+                  </div>
+                  <p className="mb-1"><strong>Bank:</strong> Equity Bank Rwanda</p>
+                  <p className="mb-1"><strong>Account Name:</strong> RISENEXT Ltd</p>
+                  <p className="mb-1"><strong>Account Number:</strong> 4021201317791</p>
+                  <p className="mb-0 text-muted small">Please add "Donation" in the payment reference.</p>
+                </div>
+              </div>
+
+              {/* International Donations */}
+              <div className="bg-secondary rounded p-5">
+                <h4 className="mb-1 fw-bold text-primary">International Donations</h4>
+                <p className="text-white mb-4">For donors outside Rwanda</p>
+
+                <div className="bg-white rounded p-4">
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="flex-shrink-0 btn-lg-square bg-primary rounded">
+                      <i className="fa fa-university text-dark"></i>
+                    </div>
+                    <h5 className="ms-3 mb-0">International Bank Transfer</h5>
+                  </div>
+                  <p className="mb-1"><strong>Bank:</strong> Equity Bank Rwanda</p>
+                  <p className="mb-1"><strong>Account Name:</strong> RISENEXT Ltd</p>
+                  <p className="mb-1"><strong>Account Number:</strong> 4021201317791</p>
+                  <p className="mb-1"><strong>SWIFT/BIC:</strong> EQBLRWRW</p>
+                  <p className="mb-0 text-muted small">Please add "Donation" in the payment reference. Contact us at info@rise-next.org if you need assistance.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -247,7 +197,7 @@ export default function DonatePage() {
                 <div className="mt-auto d-flex justify-content-center">
                   <a
                     className="btn btn-square btn-secondary rounded me-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/company/nextrise-mentorship"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -255,11 +205,19 @@ export default function DonatePage() {
                   </a>
                   <a
                     className="btn btn-square btn-secondary rounded me-2"
-                    href="https://www.instagram.com/risenext"
+                    href="https://www.instagram.com/risenext_/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <i className="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    className="btn btn-square btn-secondary rounded me-2"
+                    href="https://www.facebook.com/505870975939339/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-facebook-f"></i>
                   </a>
                 </div>
               </div>

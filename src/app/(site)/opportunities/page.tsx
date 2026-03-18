@@ -1,74 +1,26 @@
-"use client"
+import type {Metadata} from 'next'
 
-// Placeholder data - will be replaced with Sanity later
-const placeholderOpportunities = [
-  {
-    slug: 'volunteer-mentor-displaced-students',
-    title: 'Volunteer Mentor for Displaced Students',
-    type: 'Volunteering',
-    location: 'Remote',
-    employmentType: 'Volunteer',
-    excerpt:
-      'Help guide displaced high school and university students through the higher education application process.',
-    deadline: '2025-01-15',
-    isActive: true,
+export const metadata: Metadata = {
+  title: 'Opportunities',
+  description:
+    'Explore current volunteering, career, and mentee cohort opportunities with RiseNext. Join our mission to empower displaced students in Rwanda.',
+  openGraph: {
+    title: 'Opportunities — RiseNext',
+    description:
+      'Explore current volunteering, career, and mentee cohort opportunities with RiseNext.',
   },
-  {
-    slug: 'student-success-coordinator',
-    title: 'Student Success Coordinator',
-    type: 'Career',
-    location: 'Kigali, Rwanda',
-    employmentType: 'Full-time',
-    excerpt:
-      'Join our team to coordinate programs and support services for displaced students seeking higher education.',
-    deadline: '2025-01-20',
-    isActive: true,
-  },
-  {
-    slug: 'risenext-mentee-cohort-2025',
-    title: 'RiseNext Mentee Cohort 2025',
-    type: 'Cohort Application',
-    location: 'Rwanda & East Africa',
-    employmentType: 'Program',
-    excerpt:
-      'Are you a displaced high school or university student? Apply to join our 2025 mentorship cohort.',
-    deadline: '2025-02-01',
-    isActive: true,
-  },
-  {
-    slug: 'communications-marketing-volunteer',
-    title: 'Communications & Marketing Volunteer',
-    type: 'Volunteering',
-    location: 'Remote',
-    employmentType: 'Volunteer',
-    excerpt:
-      'Help us spread the word about RiseNext through social media, content creation, and community engagement.',
-    deadline: '2025-01-25',
-    isActive: true,
-  },
-  {
-    slug: 'partnership-development-manager',
-    title: 'Partnership Development Manager',
-    type: 'Career',
-    location: 'Hybrid - Kigali',
-    employmentType: 'Part-time',
-    excerpt:
-      'Build strategic partnerships with universities, NGOs, and organizations to expand opportunities for our students.',
-    deadline: '2025-02-10',
-    isActive: true,
-  },
-  {
-    slug: 'workshop-facilitator',
-    title: 'Workshop Facilitator',
-    type: 'Volunteering',
-    location: 'Kigali, Rwanda',
-    employmentType: 'Volunteer',
-    excerpt:
-      'Lead skills-building workshops in areas like essay writing, interview preparation, and academic planning.',
-    deadline: '2025-01-30',
-    isActive: true,
-  },
-]
+}
+
+const placeholderOpportunities: {
+  slug: string
+  title: string
+  type: string
+  location: string
+  employmentType: string
+  excerpt: string
+  deadline: string
+  isActive: boolean
+}[] = []
 
 export default function OpportunitiesPage() {
   return (
@@ -153,7 +105,9 @@ export default function OpportunitiesPage() {
                         } fa-2x text-secondary p-3`}
                       ></i>
                     </div>
-                    <span className="badge bg-primary text-dark rounded text-uppercase">{opportunity.type}</span>
+                    <span className="badge bg-primary text-dark rounded text-uppercase">
+                      {opportunity.type}
+                    </span>
                   </div>
                   <h5
                     className="mb-3"
@@ -209,6 +163,16 @@ export default function OpportunitiesPage() {
                 </div>
               </div>
             ))}
+            {placeholderOpportunities.length === 0 && (
+              <div className="col-12 text-center py-5 wow fadeIn" data-wow-delay="0.3s">
+                <i className="fa fa-briefcase fa-4x text-secondary mb-4"></i>
+                <h4 className="mb-3">No Opportunities Listed at the Moment</h4>
+                <p className="mb-0">
+                  We currently have no open positions, volunteering roles, or cohort applications.
+                  Check back soon or get in touch — we'd love to hear from you.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

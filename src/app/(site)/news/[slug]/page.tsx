@@ -8,12 +8,12 @@ const placeholderArticle = {
   category: 'Announcement',
   excerpt:
     'Team Eagles takes home the top prize at the prestigious CIEE UNHCR Student Challenge for their innovative mentoring program.',
-  featuredImage: '/charitize-img/causes-1.jpg',
+  featuredImage: '/Workshop-1.JPG',
   publishedAt: '2024-11-15',
   author: {
     name: 'Team Eagles',
     role: 'Founders',
-    image: '/charitize-img/team-1.jpg',
+    image: '/Workshop-7.JPG',
   },
   content: `
     <p>We are thrilled to announce that RiseNext, created by Team Eagles (Amina Mkova, Obed Korusenge Nsanzimfura, Joselyto Charite Baho Kemana, and Nimco Ibrahim), has won the 2024 CIEE UNHCR Student Challenge! This recognition validates our mission to bridge the knowledge gap for forcibly displaced high school and university students seeking higher education opportunities.</p>
@@ -55,21 +55,21 @@ const relatedArticles = [
     slug: 'first-cohort-success-stories',
     title: 'First Cohort Success Stories',
     excerpt: 'Our inaugural cohort achieves remarkable results with 15 university admissions.',
-    featuredImage: '/charitize-img/causes-2.jpg',
+    featuredImage: '/Workshop-16.JPG',
     category: 'Article',
   },
   {
     slug: 'partnership-announcement-education-africa',
     title: 'New Partnership with Education Africa',
     excerpt: 'Expanding scholarship opportunities for displaced students across East Africa.',
-    featuredImage: '/charitize-img/causes-3.jpg',
+    featuredImage: '/Workshop-17.JPG',
     category: 'Press Release',
   },
   {
     slug: 'applications-open-2025-cohort',
     title: 'Applications Open for 2025 Cohort',
     excerpt: 'Displaced students, apply now for our 2025 mentorship program.',
-    featuredImage: '/charitize-img/carousel-1.jpg',
+    featuredImage: '/Workshop-19.JPG',
     category: 'Announcement',
   },
 ]

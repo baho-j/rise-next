@@ -1,4 +1,15 @@
-"use client"
+import type {Metadata} from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description:
+    'Get in touch with RiseNext. Reach us at info@rise-next.org or +250 780 066 261. Located in Kigali, Rwanda.',
+  openGraph: {
+    title: 'Contact RiseNext',
+    description:
+      'Reach out to RiseNext for mentorship, partnerships, or general enquiries. We are based in Kigali, Rwanda.',
+  },
+}
 
 export default function ContactPage() {
   return (
@@ -33,7 +44,7 @@ export default function ContactPage() {
                 </div>
                 <div className="ms-3">
                   <h5 className="text-secondary">Mobile</h5>
-                  <p className="mb-0">+250 787 973 747</p>
+                  <p className="mb-0">+250 780 066 261</p>
                 </div>
               </div>
               <div className="d-flex mb-3">
@@ -118,7 +129,7 @@ export default function ContactPage() {
                 <div className="d-flex">
                   <a
                     className="btn btn-square btn-primary rounded me-2"
-                    href="https://www.linkedin.com/company/risenext"
+                    href="https://www.linkedin.com/company/nextrise-mentorship"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -126,11 +137,19 @@ export default function ContactPage() {
                   </a>
                   <a
                     className="btn btn-square btn-primary rounded me-2"
-                    href="https://www.instagram.com/risenext"
+                    href="https://www.instagram.com/risenext_/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <i className="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    className="btn btn-square btn-primary rounded me-2"
+                    href="https://www.facebook.com/505870975939339/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-facebook-f"></i>
                   </a>
                 </div>
               </div>

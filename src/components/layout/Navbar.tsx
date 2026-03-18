@@ -97,7 +97,7 @@ export default function Navbar({siteSettings}: NavbarProps) {
                   </div>
                   <div className="ms-2">
                     <h6 className="text-primary mb-0">Call Us</h6>
-                    <span className="text-white">+250 787 973 747</span>
+                    <span className="text-white">{siteSettings.contactPhone || '+250 780 066 261'}</span>
                   </div>
                 </div>
               </div>

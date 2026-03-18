@@ -7,24 +7,24 @@ import './hero-carousel.css'
 const slides = [
   {
     id: 1,
-    title: 'Together for a Better Tomorrow',
+    title: 'Bridging the Gap to Higher Education',
     description:
-      'We believe in creating opportunities and empowering communities through education, healthcare, and sustainable development.',
-    image: '/charitize-img/carousel-1.jpg',
+      'RiseNext mentors forcibly displaced students in Rwanda — from university applications all the way to career readiness. Winners of the 2024 CIEE UNHCR Student Challenge.',
+    image: '/Workshop-1.JPG',
   },
   {
     id: 2,
-    title: 'Together, We Can End Hunger',
+    title: 'From Refugee Camps to University Halls',
     description:
-      'No one should go to bed hungry. Your support helps us bring smiles, hope, and a brighter future to those in need.',
-    image: '/charitize-img/carousel-2.jpg',
+      'Only 4% of displaced students reach higher education. We are changing that — one mentee at a time, with hands-on support for applications, financial aid, and academic success.',
+    image: '/Workshop-22.JPG',
   },
   {
     id: 3,
-    title: 'Empowering Communities Through Education',
+    title: 'Built by Students, for Students',
     description:
-      'Education opens doors to opportunities. Join us in providing resources and mentorship to help students achieve their dreams.',
-    image: '/charitize-img/carousel-1.jpg',
+      'Founded by four young people from Kigali, RiseNext is a student-led movement backed by a $50,000 CIEE grant to create lasting impact for displaced youth in Rwanda.',
+    image: '/Workshop-7.JPG',
   },
 ]
 

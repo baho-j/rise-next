@@ -6,12 +6,12 @@ import {useState} from 'react'
 import Gallery from '@/components/ui/Gallery'
 
 const galleryImages = [
-  '/charitize-img/gallery-1.jpg',
-  '/charitize-img/gallery-2.jpg',
-  '/charitize-img/gallery-3.jpg',
-  '/charitize-img/gallery-4.jpg',
-  '/charitize-img/gallery-5.jpg',
-  '/charitize-img/gallery-6.jpg',
+  '/cohort-2.jpg',
+  '/cohort-2-1.jpg',
+  '/cohort-2-3.jpg',
+  '/Workshop-17.JPG',
+  '/Workshop-19.JPG',
+  '/Workshop-20.JPG',
 ]
 
 interface SiteSettings {
@@ -134,20 +134,23 @@ export default function Footer({siteSettings}: FooterProps) {
             </div>
             <div className="col-lg-3 col-md-6">
               <h4 className="text-light mb-4">Quick Links</h4>
-              <Link className="btn btn-link" href="/about">
-                About Us
+              <Link className="btn btn-link" href="/">
+                Home
               </Link>
-              <Link className="btn btn-link" href="/contact">
-                Contact Us
+              <Link className="btn btn-link" href="/about">
+                About
               </Link>
               <Link className="btn btn-link" href="/opportunities">
-                Our Programs
+                Opportunities
               </Link>
               <Link className="btn btn-link" href="/news">
-                Terms & Condition
+                News
               </Link>
               <Link className="btn btn-link" href="/contact">
-                Support
+                Contact
+              </Link>
+              <Link className="btn btn-link" href="/terms">
+                Terms & Conditions
               </Link>
             </div>
             <div className="col-lg-3 col-md-6">

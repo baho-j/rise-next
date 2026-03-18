@@ -1,68 +1,26 @@
-"use client"
+import type {Metadata} from 'next'
 
-// Placeholder data - will be replaced with Sanity later
-const placeholderNews = [
-  {
-    slug: 'risenext-wins-2024-ciee-unhcr-challenge',
-    title: 'RiseNext Wins 2024 CIEE UNHCR Student Challenge',
-    category: 'Announcement',
-    excerpt:
-      'Team Eagles takes home the top prize at the prestigious CIEE UNHCR Student Challenge for their innovative mentoring program.',
-    featuredImage: '/charitize-img/causes-1.jpg',
-    publishedAt: '2024-11-15',
-    author: 'Team Eagles',
+export const metadata: Metadata = {
+  title: 'News & Updates',
+  description:
+    'Stay up to date with the latest news, announcements, and events from RiseNext — the mentoring program empowering displaced students in Rwanda.',
+  openGraph: {
+    title: 'News & Updates — RiseNext',
+    description:
+      'Latest news, announcements, and events from RiseNext.',
+    images: [{url: '/Workshop-7.JPG', width: 1200, height: 630}],
   },
-  {
-    slug: 'first-cohort-success-stories',
-    title: 'First Cohort Success Stories: 15 Students Admitted to Universities',
-    category: 'Article',
-    excerpt:
-      'Our inaugural cohort of displaced students achieves remarkable results, with 15 admissions to universities across Africa, Europe, and North America.',
-    featuredImage: '/charitize-img/causes-2.jpg',
-    publishedAt: '2024-11-10',
-    author: 'Amina Mkova',
-  },
-  {
-    slug: 'partnership-announcement-education-africa',
-    title: 'New Partnership with Education Africa Initiative',
-    category: 'Press Release',
-    excerpt:
-      'RiseNext partners with Education Africa Initiative to expand scholarship opportunities for displaced students across East Africa.',
-    featuredImage: '/charitize-img/causes-3.jpg',
-    publishedAt: '2024-11-05',
-    author: 'Obed Korusenge',
-  },
-  {
-    slug: 'workshop-series-january-2025',
-    title: 'January 2025 Workshop Series: Essay Writing & Interview Skills',
-    category: 'Event',
-    excerpt:
-      'Join us for a series of interactive workshops designed to help students master the university application process.',
-    featuredImage: '/charitize-img/team-1.jpg',
-    publishedAt: '2024-11-01',
-    author: 'Joselyto Charite',
-  },
-  {
-    slug: 'volunteer-spotlight-mentors-making-difference',
-    title: 'Volunteer Spotlight: The Mentors Making a Difference',
-    category: 'Article',
-    excerpt:
-      'Meet the dedicated volunteers who are transforming lives through one-on-one mentorship and unwavering support.',
-    featuredImage: '/charitize-img/team-2.jpg',
-    publishedAt: '2024-10-28',
-    author: 'Nimco Ibrahim',
-  },
-  {
-    slug: 'applications-open-2025-cohort',
-    title: 'Applications Now Open for 2025 Mentee Cohort',
-    category: 'Announcement',
-    excerpt:
-      'We are excited to announce that applications for our 2025 mentee cohort are now open. Displaced students, this is your chance!',
-    featuredImage: '/charitize-img/carousel-1.jpg',
-    publishedAt: '2024-10-20',
-    author: 'Team Eagles',
-  },
-]
+}
+
+const placeholderNews: {
+  slug: string
+  title: string
+  category: string
+  excerpt: string
+  featuredImage: string
+  publishedAt: string
+  author: string
+}[] = []
 
 export default function NewsPage() {
   return (
@@ -198,6 +156,15 @@ export default function NewsPage() {
                 </div>
               </div>
             ))}
+            {placeholderNews.length === 0 && (
+              <div className="col-12 text-center py-5 wow fadeIn" data-wow-delay="0.3s">
+                <i className="fa fa-newspaper fa-4x text-secondary mb-4"></i>
+                <h4 className="mb-3">No News Yet</h4>
+                <p className="mb-0">
+                  We don't have any news or updates published at the moment. Check back soon!
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Pagination */}
